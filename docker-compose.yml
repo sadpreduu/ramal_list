@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  mkdocs:
+    image: python:3.9.12-buster
+    container_name: ramal_list
+    volumes:
+      - ${PWD}:/home/volume
+    restart: on-failure
+    tty: true
+    ports:
+      - "8002:8000"
+    environment:
+      TZ: "America/Sao_Paulo"
+    command: >
+        bash -c "cd /home/volume &&
+        pip3 install --upgrade pip &&
+        pip3 install -r ./requirements.txt &&
+        mkdocs serve -a 0.0.0.0:8000"
