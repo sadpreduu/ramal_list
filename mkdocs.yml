@@ -1,6 +1,8 @@
 site_name: Ramais CDA NATAL
+
 nav:
-  - Inicio: list/ramal-list.md
+  - Inicio: index.md
+  - Lista: list/ramal-list.md
   
 theme:
   name: material
